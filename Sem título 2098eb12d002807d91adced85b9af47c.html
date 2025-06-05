@@ -1,0 +1,702 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Sem título</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="2098eb12-d002-807d-91ad-ced85b9af47c" class="page sans"><header><h1 class="page-title"></h1><p class="page-description"></p><table class="properties"><tbody><tr class="property-row property-row-person"><th><span class="icon property-icon"><svg aria-hidden="true" role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(71, 70, 68, 0.6);flex-shrink:0" class="typesPerson"><path d="M10.9536 7.90088C12.217 7.90088 13.2559 6.79468 13.2559 5.38525C13.2559 4.01514 12.2114 2.92017 10.9536 2.92017C9.70142 2.92017 8.65137 4.02637 8.65698 5.39087C8.6626 6.79468 9.69019 7.90088 10.9536 7.90088ZM4.4231 8.03003C5.52368 8.03003 6.42212 7.05859 6.42212 5.83447C6.42212 4.63843 5.51245 3.68945 4.4231 3.68945C3.33374 3.68945 2.41846 4.64966 2.41846 5.84009C2.42407 7.05859 3.32251 8.03003 4.4231 8.03003ZM1.37964 13.168H5.49561C4.87231 12.292 5.43384 10.6074 6.78711 9.51807C6.18628 9.14746 5.37769 8.87231 4.4231 8.87231C1.95239 8.87231 0.262207 10.6917 0.262207 12.1628C0.262207 12.7974 0.548584 13.168 1.37964 13.168ZM7.50024 13.168H14.407C15.4009 13.168 15.7322 12.8423 15.7322 12.2864C15.7322 10.8489 13.8679 8.88354 10.9536 8.88354C8.04492 8.88354 6.17505 10.8489 6.17505 12.2864C6.17505 12.8423 6.50635 13.168 7.50024 13.168Z"></path></svg></span>Proprietário</th><td><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">V</span></span>Akira</span></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg aria-hidden="true" role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(71, 70, 68, 0.6);flex-shrink:0" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>Tags</th><td></td></tr></tbody></table></header><div class="page-body"><h1 id="2098eb12-d002-8005-b67c-f5e005f27037" class=""><img alt="5---imperial-guard" src="5_-_Imperial_Guard.png" style="width:1em;height:1em"/> RG / Guardião Real / Guarda Imperial</h1><p id="2098eb12-d002-80c5-95ec-d64ffba7219c" class="">
+</p><p id="2098eb12-d002-8093-a2db-eeb412a6c4f4" class="">Essa classe é conhecida por ser um tank, antigamente era mais uma classe suporte usando redentor, mas com novos rebalances a classe ganhou a possibilidade de ser um DPS em algumas categorias</p><p id="2098eb12-d002-80f4-b5fe-e43c59bbbec7" class="">
+</p><p id="2098eb12-d002-8076-a278-f47395c48a22" class="">Este guia tentará explicar as meta-builds de acordo com o conhecimento do autor, com a indicação do que considera melhor para as builds</p><p id="2098eb12-d002-804b-9a3a-f2ab92a50155" class="">
+</p><p id="2098eb12-d002-803d-8dac-e33f78d47109" class="">Observação importante: para as builds de dano, não utilizem a habilidade “ Bloqueio “, esta habilidade serve apenas para a build de Redentor pois sempre que ela ativa, causa uma imobilização no personagem, impedindo que ele ataque / utilize habilidades</p><p id="2098eb12-d002-80ae-b9d5-e4b7454961b5" class="">
+</p><p id="2098eb12-d002-804c-922b-f8b9f3fb951e" class="">O que precisa entender é que a classe sofreu diversas alteração e atualmente a 3rd - Guardião Real possui uma habilidade principal, Consagração.</p><p id="2098eb12-d002-8093-a82d-eaa09e8c5af1" class="">Apesar desta habilidade ser um buff, ela é a maior fonte de dano / sobrevivência / qualidade de vida que o Guardião Real quer, em seu nível máximo, seus benefícios são incríveis e essa habilidade é um divisor de águas na jogabilidade da classe</p><p id="2098eb12-d002-80d0-a540-f8944bad7d3b" class="">Além disso, um dos pré-requisitos da Consagração é o buff “ Aegis Domini “ que garante sustentabilidade de SP, regenerando 5% do SP Máximo a cada 5 segundos</p><figure id="2098eb12-d002-806d-92d9-c7ddf48818ff" class="image"><a href="Consagrao.gif"><img style="width:300px" src="Consagrao.gif"/></a></figure><figure id="2098eb12-d002-80be-a650-c046bbde675a" class="image"><a href="image.png"><img style="width:619px" src="image.png"/></a></figure><p id="2098eb12-d002-808f-8e95-f18526247d16" class="">Este buff no nível 5 possui uma duração igual a sua recarga, ou seja, é possível manter este buff sempre ativo (contando que você não morra ou troque de mapa)</p><h1 id="2098eb12-d002-807b-b3ba-cc4a6989725c" class="">Espadachim</h1><p id="2098eb12-d002-8069-93c6-c7c8defdfdd0" class="">Skill base para todas as builds, independente da escolhida no futuro, utilize esta grade de habilidades</p><p id="2098eb12-d002-80de-be8a-fbf38ecf8e5c" class="">Se você ainda não tiver renascido, não há necessidade de pegar Level de Classe 50, pode virar Templário com 40</p><p id="2098eb12-d002-803b-a6ad-d8f7937e559d" class="">Quando você renascer, terá a árvore de habilidades abaixo completa</p><figure id="2098eb12-d002-8004-861a-e16fb3232006" class="image"><a href="image%201.png"><img style="width:709.9750366210938px" src="image%201.png"/></a></figure><h1 id="2098eb12-d002-80e0-8823-ced641540705" class=""><strong>Build Toque do Oblívio + Disparo Perfurante</strong></h1><p id="2098eb12-d002-8061-8f20-e95a5c65df5f" class="">__Build meta no kRO__</p><p id="2098eb12-d002-8098-8cd9-e6b4448f36ef" class="">Esta build gira em torno da habilidade Toque do Oblívio para realizar o leveling e fazer grande parte do conteúdo, no futuro (após Tumba da Honra) é possível iniciar a transição para a habilidade Disparo Perfurante para o leveling</p><p id="2098eb12-d002-8029-a305-d0957990242d" class="">Foca-se em agilidade para aumentar o ASPD e depois em Força para aumentar o dano</p><p id="2098eb12-d002-8019-9597-de84d19d3920" class="">
+</p><p id="2098eb12-d002-8055-b481-d21709965d21" class="">Toque do Oblívio é uma habilidade de Dano a Distância que não possui tempo de conjuração, pós conjuração e recarga, por tanto, ela é “ spammável “ e depende inteiramente do ASPD do seu personagem, porém, esta habilidade é de Alvo Único. Sua formula de dano considera o nível do Golpe Fulminante, por isso é obrigatório que ela esteja no 10 para aumentar o dano.</p><p id="2098eb12-d002-8016-a70e-d51de3908d2f" class="">
+</p><p id="2098eb12-d002-80b3-b9d3-d49e6831816d" class="">Disparo Perfurante é uma habilidade de Dano a Distância que não possui tempo de conjuração nem pós conjuração, porém, possui 1,7s de recarga. Esta habilidade pode causar dano crítico e a chance de crítico é a mesma do personagem. Sua fórmula de dano considera sua FORÇA, por tanto, mais para o end-game, sua FORÇA será de 120 no mínimo.</p><h2 id="2098eb12-d002-80aa-9ae7-c14df43ed0bc" class="">Antes de Renascer (1~99) e depois de Renascer</h2><p id="2098eb12-d002-80f0-991b-dc495516ad5f" class="">Nível base 99<br/>FOR 80<br/>AGI 92<br/>VIT 1<br/>INT 1<br/>DES 70<br/>SOR 1<br/></p><h2 id="2098eb12-d002-803f-ba53-cdb9aba07b75" class="">Templário</h2><figure id="2098eb12-d002-80a3-827d-ef7599b2ece4" class="image"><a href="image%202.png"><img style="width:709.9625244140625px" src="image%202.png"/></a></figure><p id="2098eb12-d002-8012-9b39-ef0728192ad8" class="">Como templário recomenda-se utilizar a árvore de habilidade acima, dando prioridade em Rapidez com Lança 10 (Spear Quicken), ela facilitará muito o leveling inicial, concedendo bastante ASPD + Esquiva para conseguir matar os monstros no auto-attack</p><p id="2098eb12-d002-8046-8835-e59e75dc0139" class="">Depois poderá investir em Crux Divinum 10 (Holy Cross) ou Montaria + Perícia de Montaria (Peco Peco Ride + Cavalier Mastery) e por último adicione Fé (Faith) no 10</p><p id="2098eb12-d002-8090-ab1c-edc189800684" class="">Para maior eficiência do Crux Divinum, é necessário utilizar uma Lança de 2 mãos, pois o dano é dobrado, podendo ser comprada no NPC de Prontera ( /navi prt_in 165/140 ), se possível, compre a “ Lança “ - 60k zenny, possui 185 atq base, equipa em lvl 33, é duas mãos, sendo uma opção mais forte que a do Éden</p><h2 id="2098eb12-d002-8016-b2ce-c61738f3a09e" class="">Paladino</h2><figure id="2098eb12-d002-80fc-a13c-efbe0721d786" class="image"><a href="image%203.png"><img style="width:709.9874877929688px" src="image%203.png"/></a></figure><p id="2098eb12-d002-80bb-9ed2-e9634c82e5de" class="">Após renascer se tornar Paladino, a árvore de habilidade muda, temos que trabalhar nos pré-requisitos do Guardião Real, por tanto, é obrigatório que você evolua até o nível de Classe 69 para cumprir com todos os pré-requisitos desta build</p><p id="2098eb12-d002-8019-b5df-d22023b8b585" class="">Jogabilidade será muito semelhante a de Templário, porém, Crux Divinum (Holy Cross) terá apenas level 7, não pode aumentar para 10 senão irá comprometer outras habilidades cruciais para a build.</p><p id="2098eb12-d002-806b-8086-fe0ecc903968" class="">Continue evoluindo usando Rapidez com Lança e Crux Divinum</p><h2 id="2098eb12-d002-8055-a351-c075df847056" class="">Guardião Real</h2><p id="2098eb12-d002-80bf-9396-f1f03fba0c3c" class="">Nesta parte, vamos quebrar por partes a árvore de habilidades para recomendação de ordem de prioridade, como mostramos antes, é melhor iniciar a árvore de habilidades indo atrás de Consagração antes das habilidades de dano, sendo assim, recomenda-se para todas as builds iniciarem a árvore de habilidades da seguinte maneira:</p><figure id="2098eb12-d002-8021-99c2-f17494935d60" class="image"><a href="image%204.png"><img style="width:709.9625244140625px" src="image%204.png"/></a></figure><p id="2098eb12-d002-8075-bb70-d6ca7c19b131" class="">Será necessário atingir o nível de classe 26 para obter Consagração no nível 5</p><p id="2098eb12-d002-8067-b02c-ec7543869e05" class="">Jogabilidade até este ponto será focada no Crux Divinum e Auto-Attack, faça as Quests do Éden do level 100 ao 120 pois elas dão muita experiência e os monstros exigidos nestas quests não são fortes</p><figure id="2098eb12-d002-8039-8e0a-fb3e29e2f423" class="image"><a href="image%205.png"><img style="width:709.9625244140625px" src="image%205.png"/></a></figure><p id="2098eb12-d002-8002-b8ef-e4efe7fb34bc" class="">Depois vamos pegar Toque do Oblívio em seu nível máximo, sua fórmula de dano considera o nível do Golpe Fulminante, por isso colocamos ele no 10 anteriormente.</p><p id="2098eb12-d002-802c-8889-e366cd0b70f0" class="">Neste momento a jogabilidade irá mudar, você só usará Toque do Oblívio + Consagração + Aegis Domini 2 ou 3</p><figure id="2098eb12-d002-8087-aeb0-cd00c4672f49" class="image"><a href="image%206.png"><img style="width:709.9625244140625px" src="image%206.png"/></a></figure><p id="2098eb12-d002-80b8-abf1-c52253a9c4bc" class="">Depois finalizamos as habilidades obrigatórios adicionando Disparo Perfurante, Prestígio Divino e Força da Vanguarda</p><p id="2098eb12-d002-8023-b9ac-f1e070d6338e" class="">Sobram 5 pontos (nível máximo de classe 60 no momento que este guia foi criado), podendo adicionar estes pontos onde desejar</p><h3 id="2098eb12-d002-80ce-bac5-c0931abb3612" class="">Status recomendados</h3><p id="2098eb12-d002-80a9-bfb2-c40333a657c9" class="">Obs: os status são recomendações, mas podem variar conforme novos equipamentos e cartas são lançados</p><p id="2098eb12-d002-80e6-9dde-d06039a98af4" class="">Para obter 100% de crítico, utilizaremos cartas, equipamentos e outras coisas que serão lançadas</p><p id="2098eb12-d002-80b5-b59c-d7234bfea4f0" class="">Nível base 121<br/>FOR 90<br/>AGI 105<br/>VIT 30<br/>INT 30<br/>DES 70<br/>SOR 1<br/><br/>caso tenha Mochila da Aventura<br/>Nível base 121<br/>FOR 90<br/>AGI 96<br/>VIT 30<br/>INT 30<br/>DES 90<br/>SOR 1<br/></p><p id="2098eb12-d002-804d-97fc-fd298d2370c1" class=""><br/>Nível base 150<br/>FOR 120<br/>AGI 105<br/>VIT 45<br/>INT 30<br/>DES 90<br/>SOR 1<br/><br/></p><p id="2098eb12-d002-80c6-9923-df079560a9f5" class="">Nível base 175<br/>FOR 120<br/>AGI 110<br/>VIT 70<br/>INT 60<br/>DES 90<br/>SOR 60<br/></p><p id="2098eb12-d002-8099-abfa-f94a55d98243" class="">
+</p><p id="2098eb12-d002-80ba-91cf-d80b775b8010" class="">Equipamentos</p><p id="2098eb12-d002-8093-8056-de62ef75927b" class="">[ Cabeça ]</p><p id="2098eb12-d002-8085-a448-f2bf37744e2d" class="">/// Cartas</p><p id="2098eb12-d002-8081-a83a-d127ca6fb55e" class="">
+</p><p id="2098eb12-d002-80ff-8b87-ead5c3e9f6ac" class="">[Topo]</p><p id="2098eb12-d002-8049-9b65-ed3043dc5e97" class="">Rideword - opção de sustain</p><p id="2098eb12-d002-801b-8a09-cb08ff866954" class="">Chapéu da Aventura - opção de sustain, obtido durante o evento de leveling na abertura do servidor</p><p id="2098eb12-d002-80ab-80c8-e1301d6dd575" class="">Boina do Éden - opção farmável, ao realizar ataques, 7% de chance de receber +15 atq por 5s, não compensa gastar refino</p><p id="2098eb12-d002-806a-a3c2-fd31b341594f" class="">
+</p><p id="2098eb12-d002-8091-8500-e989081b064d" class="">[Médio]</p><p id="2098eb12-d002-807f-a4a5-fa9146c8891f" class="">Super Óculos Poring - 5% exp</p><p id="2098eb12-d002-80c1-a67f-ea0ec6ffa74a" class="">
+</p><p id="2098eb12-d002-80b9-ac68-c489c63e75fc" class="">[Baixo]</p><p id="2098eb12-d002-8083-9812-e6350477d0fd" class="">
+</p><p id="2098eb12-d002-80bc-b532-f06b99f4ca2a" class="">[Arma]<br/>Lança Imperial [1] - melhor opção disponível no momento (junho/25), drop de Scaraba (https://www.divine-pride.net/database/monster/2083/uni-horn-scaraba), ela aumenta +20% o dano das habilidades Toque do Oblívio e Disparo perfurante e a cada 2 refinos aumenta +3%, possui atq base de 180 e é de nível 3. Além disso, essa arma recebe encantamentos de malangdo, permitindo adicionar 2x pedras de Mira Apurada, aqui vamos farmar para obter a Mira Apurada 4 (8% dano) ou 5 (10% dano)<br/></p><p id="2098eb12-d002-8012-bb83-c68bca881f9b" class="">Lança do Éden I - opção farmável ao atingir o level 60 (quest do Ur) - obs: é possível encantar a arma para ser racial, recomenda-se encantar com inseto para ajudar a farmar a Lança Imperial</p><p id="2098eb12-d002-806e-8d08-e9374768683c" class="">Lança - comprada em NPC - 60.000 zenny, opção de lança de duas mãos para maximizar o dano do Crux Divinum durante o leveling</p><p id="2098eb12-d002-8030-aa4a-c455befbd1c3" class="">/// Cartas</p><p id="2098eb12-d002-80ab-8f0d-e1bdc0f3c683" class="">Carta Cavaleiro Branco, ATQ +15, Dano físico contra oponentes de tamanho Médio e Grande +20%.</p><p id="2098eb12-d002-80f1-85b4-da2ceafa3d36" class="">Carta do Cavaleiro do Abismo, Dano físico contra monstros Chefes +25%.</p><p id="2098eb12-d002-80ce-96ba-d520f30cc3b6" class="">Carta Esqueleto Arqueiro, Dano físico a distância +10%.</p><p id="2098eb12-d002-80cd-afc8-f4bbd3bd6aa6" class="">
+</p><p id="2098eb12-d002-80d0-a817-ecfc49991b81" class="">[Escudo]</p><p id="2098eb12-d002-805c-8275-c13a9ff93598" class="">no momento, a build não utiliza escudo, ao utilizar escudo reduz a ASPD</p><p id="2098eb12-d002-8025-b81e-f701e9d45d5e" class="">escolha qualquer escudo apenas para ativar os buffs do “ Aegis Domini “ e em sequência desequipe, futuramente iremos explorar alguns escudos, quando garantirmos ASPD 193 mesmo usando escudo ou quando mudarmos para Disparo Perfurante</p><p id="2098eb12-d002-80c1-91cb-fb27c706297a" class="">/// Cartas</p><p id="2098eb12-d002-8001-a4ef-cd61339ec4fd" class="">Carta Cavaleira Khalitzburg</p><p id="2098eb12-d002-809f-b0df-c13af03fe0ee" class="">
+</p><p id="2098eb12-d002-8042-9c8d-c80315d50b4d" class="">[Armadura]</p><p id="2098eb12-d002-80a2-8e22-e8d51d9ffe9a" class="">Armadura Heroica [1] - melhor opção no momento (junho/25), instancia: Ilha Bios, aumenta +10% dano do Toque, além de garantir +5% HP/SP, +10 ATQ, +10 Prescição/Esquiva e chance de auto-conjurar Curar 10 ou Nevasca</p><p id="2098eb12-d002-8031-acad-c2ba7154ee77" class="">Traje Anti-magia: opção farmável, instancia: torneio de magia, utilizar apenas se for utilizar o acessório Anel de Reforço Físico [1], recebe 2 encantamentos</p><p id="2098eb12-d002-800e-b169-e53884ac4050" class="">Farda do Éden - opção farmável e que faz conjunto com os acessórios do éden (anel + colar)</p><p id="2098eb12-d002-80b5-8d78-da101378c536" class="">Túnica da Aventura - obtido durante o evento de leveling na abertura do servidor</p><p id="2098eb12-d002-8096-a37d-f6417b217b97" class="">/// Cartas</p><p id="2098eb12-d002-8072-be28-ca920e848e07" class="">
+</p><p id="2098eb12-d002-800c-855d-c6aae8c0c5b1" class="">[Capa]</p><p id="2098eb12-d002-80be-af7f-e22fc3f247c9" class="">Mochila de Aventura [1] - melhor opção no momento (junho/25), ao refinar no +9 e colocar os status 90 em FOR/AGI/DEX, garante +30 atq / +8% aspd, +1 aspd / +10% dano a distância</p><p id="2098eb12-d002-8030-ab5a-faaf6b327765" class="">Manto de Aventura - obtido durante o evento de leveling na abertura do servidor</p><p id="2098eb12-d002-8001-ad37-d5f10c6839c9" class="">Pele da Rainha Verme - opção farmável que comba com a Bota Temporal, garantindo bastante +15% HP e +5% SP, além da possibilidade de vir com encantamento de + FOR</p><p id="2098eb12-d002-80d8-b474-e33589628c8f" class="">Manto do Éden - opção farmável, não comba com nada</p><p id="2098eb12-d002-807b-ac42-e009325cfd8c" class="">/// Cartas</p><p id="2098eb12-d002-8087-9301-e205bd6db421" class="">Carta Cenere, +2% aspd a cada 10 AGI base</p><p id="2098eb12-d002-80a7-b740-e49074c6d500" class="">Carta Wakwak, +5 ATQ a cada 10 FOR base</p><p id="2098eb12-d002-80d3-87e4-e225cc38cf2b" class="">Carta Menblatt, +1% dano a distancia a cada 10 DES</p><p id="2098eb12-d002-80fe-8d59-df8efc7460ed" class="">Carta Raydric, resistência a neutro +20%</p><p id="2098eb12-d002-80e2-815f-f151347b80ce" class="">
+</p><p id="2098eb12-d002-8018-b0cb-e5e941bfde8e" class="">[Sapatos]</p><p id="2098eb12-d002-8059-bc89-fd9437cf8147" class="">Bota Temporal STR - melhor opção no momento (junho/25), cada 3 refinos aumenta +7 ATQ, caso tenha 120 FOR (base), garante +50 ATQ, permite encantar com uma pedra de Mira Apurada 4 (+8% dano a distancia) e uma pedra de Instinto de Delírio (ao sofrer dano, chance de ganhar+200 FOR) ou Ânimo ou Euforia - depende da sua necessidade</p><p id="2098eb12-d002-80f5-9869-c0074b505d53" class="">Bota Temporal AGI- cada 3 refinos aumenta 3% ASPD, caso tenha 120 AGI base, +1 ASPD, é possível considerar esta bota caso não tenha fechado 193 de ASPD e não queira sacrificar muitos pontos em AGI</p><p id="2098eb12-d002-8052-8a9f-ce657cea9993" class="">Botas de Aventura - obtido durante o evento de leveling na abertura do servidor</p><p id="2098eb12-d002-807c-a943-f053724a0512" class="">Coturno do Éden - opção farmável, comba com os anéis do éden, ganhando +precisão e +% asdp</p><p id="2098eb12-d002-808d-a376-cc601bbef637" class="">/// Cartas</p><p id="2098eb12-d002-8009-8fe9-c5458e6f0939" class="">
+</p><p id="2098eb12-d002-803a-a764-cc2f620da9f5" class="">[Acessórios]</p><p id="2098eb12-d002-8057-ad1f-fadd33de2a7a" class="">Tatuagem de Bakonawa - melhor opção no momento (junho/25), instancia: <a href="https://browiki.org/wiki/Lago_de_Bakonawa">Lago de Bakonawa</a>, +7% atq / +10% aspd</p><p id="2098eb12-d002-8014-b0c8-ca8e36f40ff4" class="">Anel de Reforço Físico [1] - opção farmável, instancia: torneio da magia, +5% atq e recebe 2 encantamentos</p><p id="2098eb12-d002-807c-a5d6-f2ae51301217" class="">Anel Forte do Éden - opção farmável, utilizar apenas se for utilizar Farda do Éden</p><p id="2098eb12-d002-804f-9b8b-db4ae7c0b5a9" class="">Colar Forte do Éden - opção farmável, utilizar apenas se for utilizar Farda do Éden</p><p id="2098eb12-d002-808b-b988-d111a9531640" class="">Luva de Força - opção farmável de Eclage ( /navi ecl_in01 66/95 ) ganha 1 atq a cada 10 FOR, ganha +1% atq com 110 FOR</p><p id="2098eb12-d002-8004-9435-eb4632484e64" class="">Luva de Pata de Gato [1] - opção farmável de Malgando ( /navi malangdo 173/145 ) VIT, AGI, DES e SOR +1.</p><p id="2098eb12-d002-8059-9221-cf5a66541440" class="">/// Cartas</p><p id="2098eb12-d002-80ea-af86-fa0f7998bb5e" class="">Carta Esqueleto Arqueiro</p><p id="2098eb12-d002-80bc-b5db-e5c463479fe1" class="">
+</p><p id="2098eb12-d002-80c9-9617-c37a3dc90724" class="">
+</p><p id="2098eb12-d002-806e-b495-cbc2f90e00dc" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
